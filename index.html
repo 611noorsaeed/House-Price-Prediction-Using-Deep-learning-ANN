@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>house price prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+<!--  navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Home Price</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/doc">Documentation</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!--  main part-->
+    <h1 class="text-center">Deep Learning Projects</h1>
+    <h1 class="text-center">House Price Prediction using ANN</h1>
+
+    <div class="container mt-4 my-4" style="background:black; color:white; border-radius:15px;">
+      <h3 class="text-center"> fill all values</h3>
+      <form action="/house" method="post">
+         <div class="row">
+           <div class="col-md-6">
+             <div class="form-group">
+               <label for="text">longitude</label>
+               <input type="text" class="form-control" name="longitude">
+             </div>
+           </div>
+           <div class="col-md-6">
+             <div class="form-group">
+               <label for="text">latitude</label>
+               <input type="text" class="form-control" name="latitude">
+             </div>
+           </div>
+         </div>
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="text">house age</label>
+              <input type="text" class="form-control" name="houseage">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="text">house rooms</label>
+              <input type="text" class="form-control" name="houserooms">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="text">total bedrooms</label>
+              <input type="text" class="form-control" name="totlabedrooms">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="text">population</label>
+              <input type="text" class="form-control" name="population">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="text">house holds</label>
+              <input type="text" class="form-control" name="households">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="text">medianincome</label>
+              <input type="text" class="form-control" name="medianincome">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="text">ocean_proximity</label>
+              <input type="text" class="form-control" name="oceanproximity" placeholder="1:inland, 2:near ocean, 3: near bay, 4:iland">
+            </div>
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" style="margin-top:5px;margin-bottom:5px; margin-left:40%;width:200px;">predict</button>
+      </form>
+
+
+    </div>
+   <div class="container">
+     {% if result %}
+     <h5>Predicted Price</h5> <br>
+      <p>{{result}}</p>
+     {% endif %}
+   </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
